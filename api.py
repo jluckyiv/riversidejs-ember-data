@@ -13,7 +13,7 @@ from bottle import (Bottle,
                     static_file)
 
 
-DSN = 'dbname=moviedb'
+DSN = os.getenv('DATABASE_URL', 'dbname=moviedb')
 SITE_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dist')
 ASSETS_ROOT = os.path.join(SITE_ROOT, 'assets')
 
@@ -179,4 +179,4 @@ if __name__ == '__main__':
     if args.init_db:
         init_db()
     else:
-        run(app, debug=True)
+        run(app, debug=True, port=os.getenv('PORT', 8080))
