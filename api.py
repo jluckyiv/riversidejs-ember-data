@@ -179,4 +179,4 @@ if __name__ == '__main__':
     if args.init_db:
         init_db()
     else:
-        run(app, debug=True, port=os.getenv('PORT', 8080))
+        run(app, port=os.getenv('PORT', 8080))
