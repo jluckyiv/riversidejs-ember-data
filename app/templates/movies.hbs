@@ -1,0 +1,17 @@
+{{input type="search" value=searchTitle placeholder="Search movie"}}
+<ul>
+  {{#each searchFilter}}
+  <li>{{#link-to 'movie' id}}{{title}} ({{year}}){{/link-to}}</li>
+  {{/each}}
+  {{#if isEditing}}
+  <li>
+    {{input value=newTitle placeholder="Title"}} -
+    {{input value=newYear placeholder="Year"}} -
+    {{input value=newDirector placeholder="Director"}}
+    <button {{action 'doneEditing'}}>Ok</button>
+    <button {{action 'cancelEditing'}}>Cancel</button>
+  </li>
+  {{else}}
+  <li><button {{action 'newMovie'}}>New</button></li>
+  {{/if}}
+</ul>

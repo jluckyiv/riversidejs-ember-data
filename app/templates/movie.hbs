@@ -1,0 +1,19 @@
+{{#link-to 'movies'}}Back{{/link-to}}
+<h3>{{title}}</h3>
+<p>{{director}}</p>
+<ul>
+  {{#each goofs}}
+  <li>{{description}} (<strong>{{minutes}}m{{seconds}}s</strong>)</li>
+  {{/each}}
+  {{#if isEditing}}
+  <li>
+    {{input value=newDescription placeholder="Description"}} -
+    {{input value=newMinutes placeholder="Minutes"}} -
+    {{input value=newSeconds placeholder="Seconds"}}
+    <button {{action 'doneEditing'}}>Ok</button>
+    <button {{action 'cancelEditing'}}>Cancel</button>
+  </li>
+  {{else}}
+  <li><button {{action 'newGoof'}}>New</button></li>
+  {{/if}}
+</ul>
