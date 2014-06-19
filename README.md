@@ -1,6 +1,16 @@
-# Movie-goofs-db
+# RiversideJS Ember Data demo
 
-This README outlines the details of collaborating on this Ember application.
+Follow the installation instructions below. Presentation slides file
+is `slides.pdf`. PostgreSQL is needed to run the API server locally.
+
+You can deploy this app to **Heroku**, but remember to add the
+**Heroku-Postgres** addon and set `BUILDPACK_URL` config to
+`https://github.com/heroku/heroku-buildpack-python`, as below:
+
+```bash
+heroku addons:add heroku-postgres:dev
+heroku config:set BUILDPACK_URL= https://github.com/heroku/heroku-buildpack-python
+```
 
 ## Installation
 
@@ -8,10 +18,14 @@ This README outlines the details of collaborating on this Ember application.
 * `npm install`
 * `bower install`
 
+* `virtualenv env`
+* `source env/bin/activate`
+* `pip install -r requirements.txt`
+
 ## Running
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+* `ember server` for local ember testing
+* `python api.py` for API server (remember to run `ember build` first)
 
 ## Running Tests
 
