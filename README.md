@@ -25,6 +25,8 @@ heroku config:set BUILDPACK_URL= https://github.com/heroku/heroku-buildpack-pyth
 ## Running
 
 * `ember server` for local ember testing
+* `python api.py --init-db` to initialize database tables (assuming
+  you,`createdb moviedb` )
 * `python api.py` for API server (remember to run `ember build` first)
 
 ## Running Tests
